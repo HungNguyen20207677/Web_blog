@@ -1,0 +1,13 @@
+.cover-1 {
+    background: url('/media/background-1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.cover-2 {
+    background: url('/media/background-2.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
