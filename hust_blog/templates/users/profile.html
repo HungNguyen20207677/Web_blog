@@ -22,8 +22,8 @@
                             <img class="img-thumbnail" src="{{ user.profilemodel.image.url }}" alt="profile-img">
                         </div>
                         <div class="col-md-8">
-                            <h4>Name: {{ user.username }}</h4>
-                            <h4>Email: {{ user.email }}</h4>
+                            <div style="font-size: 20px; display: flex;"><b style="margin-right: 5px">Name:</b> <span>{{ user.username }}</span></div>
+                            <div style="font-size: 20px; display: flex;"><b style="margin-right: 5px">Email:</b> <span>{{ user.email }}</span></div>
 
                         </div>
                     </div>
@@ -48,12 +48,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-thumbnail" src="{{ user.profilemodel.image.url }}" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ u_form|crispy }}
+                            {{ p_form|crispy }}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary btn-sm">Save</button>
-            </div>
+            
         </div>
     </div>
 </div>

@@ -23,14 +23,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="" alt="img">
+                            <img class="img-thumbnail" src="{{ post.author.profilemodel.image.url }}" alt="img">
                         </div>
 
                         <div class="col-md-8">
                             <small>{{ post.date_created }}</small>
                             <hr>
-                            <a class="h3" href="">{{ post.title }}</a>
-                            <p class="text-justify my-3">
+                            <a class="h3" href="{% url 'blog-post-detail' post.id %}">{{ post.title }}</a>
+                            <p style="
+                            height: 100px;
+                            width: 95%; 
+                            font-style:italic;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 4; /* Adjust the number of lines to display */
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;" class="text-justify my-3">
                                 {{ post.content }}
                             </p>
                         </div>
